@@ -1,0 +1,52 @@
+import tkinter.font
+
+
+window = tkinter.Tk()
+window.title("가위바위보")
+window.geometry("800x600+0+0")
+window.resizable(False, False)
+
+
+win = 0
+draw = 0
+lose = 0
+
+
+photo1 = tkinter.PhotoImage(file =r"C:\Users\User\PycharmProjects\oh\rock.png")
+photo2 = tkinter.PhotoImage(file =r"C:\Users\User\PycharmProjects\oh\paper.png")
+photo3 = tkinter.PhotoImage(file =r"C:\Users\User\PycharmProjects\oh\scissors.png")
+
+font=tkinter.font.Font(family="맑은 고딕", size=20, weight="bold")
+
+
+#라벨 설정
+label_score = tkinter.Label(window, text = "승 : " + str(win) +" 무 : " + str(draw) +" 패 : " + str(lose), bd = 1, font=font)
+label_score.pack()
+
+label_player = tkinter.Label(window, text = "사용자", bd = 0, font=font)
+label_player.place(x=100, y= 50)
+
+label_cpu = tkinter.Label(window, text = "컴퓨터", bd = 0, font=font)
+label_cpu.place(x=600, y=50)
+
+label_vs = tkinter.Label(window, text = "VS", bd = 0, font=font)
+label_vs.place(x=385, y=160)
+
+
+#버튼 설정
+b1 = tkinter.Button(window, relief = "solid", image = photo1, width = 150, height = 160, repeatdelay=100, repeatinterval=100)
+b1.place(x=50, y=400)
+
+
+b2 = tkinter.Button(window, relief = "solid", image = photo2, width = 150, height = 160, repeatdelay=100, repeatinterval=100)
+b2.place(x=325, y=400)
+
+
+b3 = tkinter.Button(window, relief = "solid", image = photo3, width = 150, height = 160, repeatdelay=100, repeatinterval=100)
+b3.place(x=600, y=400)
+
+
+
+
+
+window.mainloop()
